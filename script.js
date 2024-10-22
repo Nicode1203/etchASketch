@@ -3,23 +3,17 @@ mainBox.classList.add("game-box");
 const gridContainer = document.createElement("div");
 gridContainer.style.display = "flex";
 gridContainer.style.flexWrap = "wrap";  
+gridContainer.style.width = "500px";
+gridContainer.style.height = "500px";
 
 const btnChoice = document.createElement("button");
 btnChoice.textContent = "how many squares(pixels) do you want?";
 
-
-
-
 function createGrid(numSquaresValue) {
-    gridContainer.innerHTML = ''; // Cleaning the container
+    gridContainer.innerHTML = ''; // Cleaning the container, good reminder
 
 
-    const squareSize = 14; //each square pixel size
-
-    const gridSize = numSquaresValue * squareSize;
-    gridContainer.style.width = `${gridSize}px`;
-    gridContainer.style.height = `${gridSize}px`;
-
+    const squareSize = Math.floor(500 / numSquaresValue); //each square pixel size
 
     for (let i = 0; i < numSquaresValue * numSquaresValue; i++) {
         const gridSquare = document.createElement("div");
@@ -37,6 +31,7 @@ function createGrid(numSquaresValue) {
         gridContainer.appendChild(gridSquare);
     }
 }
+
 
 btnChoice.addEventListener("click", () =>{
     const numSquares = prompt("Select the number of squares you want (eg 100 = 100x100), Maximum number 100");
