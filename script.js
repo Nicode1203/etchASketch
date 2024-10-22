@@ -1,4 +1,5 @@
 const mainBox = document.createElement("div");
+mainBox.classList.add("game-box");
 const gridContainer = document.createElement("div");
 gridContainer.style.display = "flex";
 gridContainer.style.flexWrap = "wrap";  
